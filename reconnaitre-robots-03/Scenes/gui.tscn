@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://ct0tdhqqsd376"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mr1e5"]
+size = Vector3(5.9550476, 1, 0.2635498)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cqewt"]
+
+[sub_resource type="SystemFont" id="SystemFont_mr1e5"]
+subpixel_positioning = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pe210"]
+size = Vector3(5.9546967, 1, 0.26086426)
+
+[node name="GUI" type="StaticBody3D" unique_id=206277386]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=74546801]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0047810078, 0, 0.0037533045)
+layers = 16
+mesh = SubResource("BoxMesh_mr1e5")
+surface_material_override/0 = SubResource("StandardMaterial3D_cqewt")
+
+[node name="Compteur" type="Label3D" parent="MeshInstance3D" unique_id=445093186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.13599706)
+layers = 16
+modulate = Color(0, 0, 0, 1)
+text = "Score"
+font = SubResource("SystemFont_mr1e5")
+font_size = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2126840697]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.024136782, 0, 0.008086801)
+shape = SubResource("BoxShape3D_pe210")

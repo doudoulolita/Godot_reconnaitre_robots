@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://b4afmbs7uus1c"]
+
+[ext_resource type="PackedScene" uid="uid://ivumsebjqw21" path="res://Scenes/image_robot_1.tscn" id="1_8w3vl"]
+[ext_resource type="Script" uid="uid://c4yw5wkxf3461" path="res://Scripts/niveau_1.gd" id="1_p4t45"]
+[ext_resource type="PackedScene" uid="uid://bj2ou6gum8tqn" path="res://Scenes/robot_1.tscn" id="2_d77iu"]
+[ext_resource type="Script" uid="uid://dtn3ifqpb4cpj" path="res://Scripts/robot_1.gd" id="3_4wx7d"]
+[ext_resource type="PackedScene" uid="uid://qpyy08wneyd8" path="res://Scenes/robot_2.tscn" id="4_p4t45"]
+[ext_resource type="Script" uid="uid://b7dmg0nhjhxar" path="res://Scripts/robot_2.gd" id="6_cgkdp"]
+[ext_resource type="PackedScene" uid="uid://ct0tdhqqsd376" path="res://Scenes/gui.tscn" id="7_h6w1h"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pe210"]
+size = Vector3(9.358505, 0.059143066, 8.106625)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_11kpb"]
+albedo_color = Color(1, 0.7607843, 0.6666667, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_h6w1h"]
+data = PackedVector3Array(-4.6793, 0.0296, 4.0533, 4.6793, 0.0296, 4.0533, -4.6793, -0.0296, 4.0533, 4.6793, 0.0296, 4.0533, 4.6793, -0.0296, 4.0533, -4.6793, -0.0296, 4.0533, 4.6793, 0.0296, -4.0533, -4.6793, 0.0296, -4.0533, 4.6793, -0.0296, -4.0533, -4.6793, 0.0296, -4.0533, -4.6793, -0.0296, -4.0533, 4.6793, -0.0296, -4.0533, 4.6793, 0.0296, 4.0533, 4.6793, 0.0296, -4.0533, 4.6793, -0.0296, 4.0533, 4.6793, 0.0296, -4.0533, 4.6793, -0.0296, -4.0533, 4.6793, -0.0296, 4.0533, -4.6793, 0.0296, -4.0533, -4.6793, 0.0296, 4.0533, -4.6793, -0.0296, -4.0533, -4.6793, 0.0296, 4.0533, -4.6793, -0.0296, 4.0533, -4.6793, -0.0296, -4.0533, 4.6793, 0.0296, 4.0533, -4.6793, 0.0296, 4.0533, 4.6793, 0.0296, -4.0533, -4.6793, 0.0296, 4.0533, -4.6793, 0.0296, -4.0533, 4.6793, 0.0296, -4.0533, -4.6793, -0.0296, 4.0533, 4.6793, -0.0296, 4.0533, -4.6793, -0.0296, -4.0533, 4.6793, -0.0296, 4.0533, 4.6793, -0.0296, -4.0533, -4.6793, -0.0296, -4.0533)
+
+[node name="Niveau1" type="Node3D" unique_id=1978681616]
+script = ExtResource("1_p4t45")
+
+[node name="Sol1" type="StaticBody3D" parent="." unique_id=312263498]
+collision_mask = 14
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sol1" unique_id=1108763890]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017723083, -0.022613525, 3.49827)
+mesh = SubResource("BoxMesh_pe210")
+surface_material_override/0 = SubResource("StandardMaterial3D_11kpb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sol1" unique_id=1796426724]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017723083, -0.022613525, 3.49827)
+shape = SubResource("ConcavePolygonShape3D_h6w1h")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1607451769]
+transform = Transform3D(1, 0, 0, 0, 0.9959845, 0.089525655, 0, -0.089525655, 0.9959845, -0.18579483, 2.2027798, 10.218826)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1833887478]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.79022217, 1.1605883, 8.267101)
+
+[node name="ImageRobot1" parent="." unique_id=2044550226 instance=ExtResource("1_8w3vl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3127544, 0.85843086, 6.957221)
+
+[node name="Robot1" parent="." unique_id=1080964218 instance=ExtResource("2_d77iu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3234396, 0.81213903, 6.043463)
+script = ExtResource("3_4wx7d")
+
+[node name="Robot2" parent="." unique_id=1065187202 instance=ExtResource("4_p4t45")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5667667, 0.7483289, 5.443104)
+script = ExtResource("6_cgkdp")
+
+[node name="GUI" parent="." unique_id=585590577 instance=ExtResource("7_h6w1h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28158188, 3.6605759, 6.6641235)
+
+[connection signal="body_entered" from="Robot1" to="ImageRobot1" method="_on_robot_1_body_entered"]
+[connection signal="body_entered" from="Robot2" to="ImageRobot1" method="_on_robot_2_body_entered"]

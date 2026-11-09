@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ivumsebjqw21"]
+
+[ext_resource type="Script" uid="uid://dgpih82gg2wy5" path="res://Scripts/image_robot_1.gd" id="1_goc3s"]
+[ext_resource type="Texture2D" uid="uid://cb1iohsc18bes" path="res://Textures/nao_silhouette.png" id="1_nnvjn"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_pe210"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_goc3s"]
+transparency = 1
+albedo_texture = ExtResource("1_nnvjn")
+uv1_scale = Vector3(1.71, 1.71, 1.71)
+uv1_offset = Vector3(0.665, 0.63, 0)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mr1e5"]
+
+[node name="ImageRobot1" type="CharacterBody3D" unique_id=2044550226]
+collision_layer = 2
+collision_mask = 13
+script = ExtResource("1_goc3s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1417587699]
+mesh = SubResource("CapsuleMesh_pe210")
+surface_material_override/0 = SubResource("StandardMaterial3D_goc3s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=548486432]
+shape = SubResource("CapsuleShape3D_mr1e5")

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bj2ou6gum8tqn"]
+
+[ext_resource type="Texture2D" uid="uid://20ufae2qu4is" path="res://Textures/nao.png" id="1_hhftf"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pe210"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_oaqua"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhftf"]
+transparency = 1
+albedo_texture = ExtResource("1_hhftf")
+uv1_scale = Vector3(1.42, 1.42, 1.42)
+uv1_offset = Vector3(0.8, 0.86, 0)
+
+[node name="Robot1" type="RigidBody3D" unique_id=1080964218]
+collision_layer = 4
+collision_mask = 11
+contact_monitor = true
+max_contacts_reported = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1736114463]
+shape = SubResource("CapsuleShape3D_pe210")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1998796268]
+mesh = SubResource("CapsuleMesh_oaqua")
+surface_material_override/0 = SubResource("StandardMaterial3D_hhftf")
